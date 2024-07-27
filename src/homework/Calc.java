@@ -5,47 +5,41 @@ import java.util.Scanner;
 public class Calc {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        //Необходимо написать калькулятор. Алгоритм:
-        //1. Вывести на экран: Введите первое число
-        System.out.println("Введите первое число: " );
-        double firstNumber = scanner.nextDouble();
 
-        //2. Получить число с помощью scanner.nextDouble(), сохранить его в переменную
-        //3. Вывести на экран: Введите знак операции - "+", "-", "*", "/"
-        System.out.println("Введите знак операции (+, -, *, /):");
-        String calculation = scanner.next();
-        //4. Получить текст с помощью scanner.nextLine(), сохранить его в переменную
-        //4. Вывести на экран: Введите второе число
-        System.out.println("Введите второе число: ");
-        double secondNumber = scanner.nextDouble();
-        //5. Получить число с помощью scanner.nextDouble(), сохранить его в переменную
-        //6. В зависимости от знака операции произвести соответствующую операцию. Вывести результат на экран.
+        // 1. Вывести на экран: Введите первое число
+        System.out.print("Введите первое число: ");
+        double firstNumber = scanner.nextDouble(); // 2. Получить первое число
+
+        // 3. Вывести на экран: Введите знак операции - "+", "-", "*", "/"
+        System.out.print("Введите знак операции (+, -, *, /): ");
+        String operation = scanner.next(); // 4. Получить знак операции
+
+        // 4. Вывести на экран: Введите второе число
+        System.out.print("Введите второе число: ");
+        double secondNumber = scanner.nextDouble(); // 5. Получить второе число
+
+        // 6. В зависимости от знака операции произвести соответствующую операцию
         double result;
-                switch (calculation) {
-                    case "+":
-                        result = firstNumber + secondNumber;
-                        System.out.println("Результат:" + result);
-                        break;
-                    case "-":
-                        result = firstNumber - secondNumber;
-                        System.out.println("Результат" + result);
-                        break;
-                    case "*":
-                        result = firstNumber * secondNumber;
-                            System.out.println("Результат" + result);
-                            break;
-                    case "/":
-                            if (secondNumber !=0) {
-                                result = firstNumber / secondNumber;
-                                System.out.println("Результат" + result);
-                            } else {
-                                System.out.println("Ошибка. Деление на ноль!");
-                            }
-                            break;
-                    default:
-                        System.out.println("Ошибка, недопустимый знак операци!");
-                }
+        if (operation.equals("+")) {
+            result = firstNumber + secondNumber;
+            System.out.println("Результат: " + result);
+        } else if (operation.equals("-")) {
+            result = firstNumber - secondNumber;
+            System.out.println("Результат: " + result);
+        } else if (operation.equals("*")) {
+            result = firstNumber * secondNumber;
+            System.out.println("Результат: " + result);
+        } else if (operation.equals("/")) {
+            if (secondNumber != 0) {
+                result = firstNumber / secondNumber;
+                System.out.println("Результат: " + result);
+            } else {
+                System.out.println("Ошибка: деление на ноль!");
+            }
+        } else {
+            System.out.println("Ошибка: недопустимый знак операции!");
+        }
 
-        scanner.close();
+        scanner.close(); // Закрытие сканера
     }
 }
