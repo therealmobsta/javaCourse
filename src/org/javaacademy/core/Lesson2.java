@@ -1,3 +1,4 @@
+
 package org.javaacademy.core;
 
 public class Lesson2 {
