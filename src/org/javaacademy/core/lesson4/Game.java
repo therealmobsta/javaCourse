@@ -8,7 +8,7 @@ public class Game {
         Soldier soldierPetr = new Soldier("Petr", 100);
         Soldier soldierIvan = new Soldier("Ivan", 90);
         //Запись свойства
-        //soldierPetr.name = "Petr";
+        soldierPetr.name = "Petr";
         //soldierPetr.hp = 100;
 
         System.out.println("Имя солдата: " + soldierPetr.getName());
